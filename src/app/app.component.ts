@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'routing';
+
+  constructor(private router: Router){
+
+  }
+  queryParams() { 
+    this.router.navigate(['countries'], { 
+      queryParams: { city: 'medellin', currency: "COP"} 
+    });
+  }
+  
+  onClick(action: boolean){
+    sessionStorage.setItem('authenticated', action ? "true" : "false")
+    if(action === false){
+      this.router.navigate(['/']);
+    }
+  }
 }
