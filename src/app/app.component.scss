@@ -1,0 +1,42 @@
+.login-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    height:80vh;
+    .buttons-container{
+        width: 50%;
+        background-color: #C5D5EA;
+        height: 35vh;
+        text-align: center;
+        padding: 1rem;
+        border-radius: .4rem;
+        box-shadow: .5rem .5rem #335379;
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            a{
+                cursor: pointer;
+                color: black;
+            }
+            button{
+                width: 30%;
+                height: 2.2rem;
+                border-radius: .4rem;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                &:nth-child(2){
+                    margin:1rem 0;
+                }
+                &:hover{
+                    background-color:#7392B7;
+                    color: white;
+                    transition: 0.4s ease-in;
+                }
+                
+            }
+        }
+    }
+}
