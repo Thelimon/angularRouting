@@ -10,7 +10,7 @@ import { DataService } from './data.service';
 
 export class CountryComponent implements OnInit {
 
-  country:CurrencyI[] = [];
+  public country:CurrencyI[] = [];
   constructor(private dataSvc:DataService) { }
 
   ngOnInit(): void {

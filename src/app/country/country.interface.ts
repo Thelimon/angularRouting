@@ -1,7 +1,7 @@
 export interface CurrencyI {
   code: string;
   name: string;
-  symbol: string;
+  // symbol: string;
 }
 
 export interface LanguageI {

@@ -1,0 +1,18 @@
+<form #form="ngForm" class=" routing-form" (ngSubmit)="enviar()">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Example label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" 
+      placeholder="Example input" name="country-name" [(ngModel)]="newCountry.name">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Another label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" 
+      placeholder="Another input" name="country-code" [(ngModel)]="newCountry.code">
+  </div>
+  <button>Enviar</button>
+</form>
+
+<pre>{{newCountry | json}}</pre>
+
+
+
