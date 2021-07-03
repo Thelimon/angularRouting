@@ -17,6 +17,8 @@ export class CountryFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.newCountry.name= "Ecuador", 
+    this.newCountry.code = "Quito"
   }
 
   public enviar():void{
