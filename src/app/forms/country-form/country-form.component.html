@@ -1,18 +1,43 @@
-<form #form="ngForm" class=" routing-form" (ngSubmit)="enviar()">
+<form #form="ngForm" class="routing-form" (ngSubmit)="enviar()">
   <div class="form-group">
     <label for="formGroupExampleInput">Example label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" 
-      placeholder="Example input" name="country-name" [(ngModel)]="newCountry.name" required>
+    <input
+      type="text"
+      class="form-control"
+      id="formGroupExampleInput"
+      placeholder="Write de country name"
+      name="country-name"
+      [(ngModel)]="newCountry.name"
+      #formGroupExampleInput="ngModel"
+      required
+    />
+    <div
+      [hidden]="formGroupExampleInput.valid || formGroupExampleInput.pristine"
+      class="alert alert-danger"
+    >
+      Name is required
+    </div>
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2">Another label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" 
-      placeholder="Another input" name="country-code" [(ngModel)]="newCountry.code">
+    <input
+      type="text"
+      class="form-control"
+      id="formGroupExampleInput2"
+      placeholder="Write the country code"
+      name="country-code"
+      [(ngModel)]="newCountry.code"
+      #formGroupExampleInput2="ngModel"
+      required
+    />
+    <div
+      [hidden]="formGroupExampleInput2.valid || formGroupExampleInput2.pristine"
+      class="alert alert-danger"
+    >
+      Code is neccesary
+    </div>
   </div>
   <button>Enviar</button>
 </form>
 
-<pre>{{newCountry | json}}</pre>
-
-
-
+<pre>{{ newCountry | json }}</pre>
