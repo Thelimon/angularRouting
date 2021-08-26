@@ -1,0 +1,83 @@
+<form #form="ngForm" class="form-two" (ngSubmit)="enviar()">
+  <div class="form-group">
+    <label for="formExampleId">Post</label>
+    <input
+      type="number"
+      class="form-control"
+      id="formExampleId"
+      placeholder="write an id"
+      name="formExampleId"
+      [(ngModel)]="newForm.id"
+      minlength="1"
+      maxlength="9"
+      #formExampleId="ngModel"
+      required
+    />
+    <div
+      *ngIf="
+        formExampleId.invalid && (formExampleId.dirty || formExampleId.touched)
+      "
+      class="alert alert-danger"
+    >
+      <div [hidden]="formExampleId.errors?.minLenght">
+        Name must be at least 1 characters long
+      </div>
+    </div>
+
+    <label for="formExampleTitle">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="formExampleTitle"
+      placeholder="write a title"
+      name="formExampleTitle"
+      [(ngModel)]="newForm.title"
+      minlength="5"
+      maxlength="20"
+      #formExampleTitle="ngModel"
+      required
+    />
+    <div
+      *ngIf="
+        formExampleTitle.invalid &&
+        (formExampleTitle.dirty || formExampleTitle.touched)
+      "
+      class="alert alert-danger"
+    >
+      <div [hidden]="formExampleTitle.errors?.minLenght">
+        Title must be at least 5 characters long
+      </div>
+      Title is required
+    </div>
+
+    <label for="formExampleBody">Body</label>
+    <textarea
+      type="area"
+      class="form-control"
+      id="formExampleBody"
+      placeholder="write a body"
+      name="formExampleBody"
+      [(ngModel)]="newForm.body"
+      minlength="5"
+      maxlength="40"
+      #formExampleBody="ngModel"
+      required
+    >
+    <textarea
+      *ngIf="
+        formExampleBody.invalid &&
+        (formExampleBody.dirty || formExampleBody.touched)
+      "
+      class="alert alert-danger"
+    >
+      <div [hidden]="formExampleBody.errors?.minLenght">
+        Body must be at least 5 characters long
+      </div>
+      Body is required
+    </textarea>
+  </div>
+</form>
+
+<pre>
+    {{newForm | json}}
+</pre>

@@ -9,12 +9,14 @@ import { CountryComponent } from './country/country.component';
 import { TokenInterceptorService } from './interceptors/token-interceptor.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CountryFormComponent } from './forms/country-form/country-form.component';
+import { BlogComponentComponent } from './forms/blog-component/blog-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountryComponent,
-    CountryFormComponent
+    CountryFormComponent,
+    BlogComponentComponent
   ],
   imports: [
     BrowserModule,
